@@ -10,3 +10,11 @@
 - Add a new environment
 - install packages in the new environment:
   `pip install -r requirements.txt` (installs packages from requirements.txt into the new env)
+
+### Deliverables:
+
+- add.py
+- screenshots of step by step setting up the environment
+- README.md
+- requirements.txt
+- Journal
