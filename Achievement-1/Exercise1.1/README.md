@@ -1,5 +1,7 @@
 # Python Achievement 1 Exercise 1.1
 
+## Prepare developer environment for programming with Python
+
 - Install Python
 - See if you already have Python installed `python --version`
 - Manage virtual environment with virtualenvwrapper-win `pip install <package-name>`
