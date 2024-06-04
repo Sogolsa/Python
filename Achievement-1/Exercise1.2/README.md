@@ -1,13 +1,13 @@
 # Achievement 1- Exercise 1.2
 
-> Basic Prompts and Functions
-> Variables and Data Types in Python
-> Scalar Objects
-> Non-Scalar Objects
-> Tuples
-> Lists
-> Strings
-> Dictionaries
+> - Basic Prompts and Functions
+> - Variables and Data Types in Python
+> - Scalar Objects
+> - Non-Scalar Objects
+> - Tuples
+> - Lists
+> - Strings
+> - Dictionaries
 
 ## Create a data structure named recipe_1 that contains the following keys
 
