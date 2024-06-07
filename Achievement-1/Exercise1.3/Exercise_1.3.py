@@ -40,6 +40,8 @@ for recipe in recipes_list:
     for ingredient in recipe["ingredients"]:
         print(ingredient)
     print("Difficulty level: " + recipe['difficulty'])
+    print("")
+
 
 # Print all ingredients of all the recipes.
 print("Ingredients Available Across All Recipes")
