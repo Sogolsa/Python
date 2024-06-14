@@ -58,3 +58,19 @@ print("Height(4, 6) > Height(4, 5): ", Height(4, 6) > Height(4, 5))
 print("Height(4, 5) >= Height(4, 5): ", Height(4, 5) >= Height(4, 5))
 print("Height(4, 5) >= Height(4, 5): ", Height(4, 5) >= Height(4, 5))
 print("Height(5, 9) != Height(5, 10): ", Height(5, 9) != Height(5, 10))
+
+# Creating a list of Height objects
+heights = [
+    Height(5, 9),
+    Height(4, 11),
+    Height(5, 10),
+    Height(4, 9),
+]
+
+# sorting the list of heights
+heights = sorted(heights)
+
+# printing the sorted heights
+print("Sorted Heights: ")
+for height in heights:
+    print(height)
