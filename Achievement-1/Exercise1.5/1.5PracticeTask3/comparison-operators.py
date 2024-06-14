@@ -61,6 +61,8 @@ print("Height(5, 9) != Height(5, 10): ", Height(5, 9) != Height(5, 10))
 
 # Creating a list of Height objects
 heights = [
+    Height(4, 5),
+    Height(4, 6),
     Height(5, 9),
     Height(4, 11),
     Height(5, 10),
