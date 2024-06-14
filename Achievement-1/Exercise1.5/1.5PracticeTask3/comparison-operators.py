@@ -70,6 +70,7 @@ heights = [
 ]
 
 # sorting the list of heights
+# sorted(heights, reverse=True) for descending
 heights = sorted(heights)
 
 # printing the sorted heights
