@@ -21,11 +21,11 @@
 
 ### Step 3
 
-mysql> exist
+- mysql> exist
 
 ## Installing and Importing the MySQL Connector for Python:
 
-- activate a virtual environment =>
+- First activate a virtual environment:
 
 ```bash
 pip install mysql-connector-python
@@ -37,24 +37,24 @@ import mysql.connector
 ```
 
 - Initialize a new object
-  cursor = conn.cursor()
+  `cursor = conn.cursor()`
 
 #### Create Database
 
-> for sql:
-> `CREATE DATABASE <database name>;`
-> for python
+for SQL:
+`CREATE DATABASE <database name>;`
+for Python:
 
 ```bash
 cursor.execute("<SQL query>")
 cursor.execute("CREATE DATABASE my_database")
 ```
 
-### use the data base
+### use the database
 
-> `USE <database name>`
+MySQL: `USE <database name>`
 
-`cursor.execute("USE my_database")`
+iPython: `cursor.execute("USE my_database")`
 
 ### Create a table in MySQL
 
@@ -80,7 +80,7 @@ CREATE TABLE <table name> (
 
 `ALTER TABLE <table name> ADD COLUMN <definition of your new column>` ex: dummy_column INT
 
-### View all columns in iPython:
+#### View all columns in iPython:
 
 ```bash
 cursor.execute("DESCRIBE Stock")
@@ -103,11 +103,11 @@ for row in result:
 
 `ALTER TABLE <table name> DROP COLUMN <column name>;`
 
-### Adding Entries to Your Table
+#### Adding Entries to Your Table
 
 `INSERT INTO <table name> (<columns to enter data into>) VALUES` (<corresponding values for each column>)
 
-### Updating Values in Your Table
+#### Updating Values in Your Table
 
 `UPDATE <table name> SET <column name> = <new value> WHERE <condition describing the row>`
 
@@ -115,7 +115,7 @@ for row in result:
 
 `DELETE FROM <table name> WHERE <condition describing the row>`
 
-### SAVE CHANGES:
+#### SAVE CHANGES:
 
 `conn.commit()`
 `conn.close()`
