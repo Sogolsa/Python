@@ -2,6 +2,10 @@
 
 ## Create a MySQL database for Recipe App
 
+## Relational Database Management Systems
+
+(RDBMS) are systems to help you manage your database, including keeping it secure by controlling user access. MySQL is used as a RDBMS for the Recipe App
+
 ## After Installation
 
 ### Step 1
