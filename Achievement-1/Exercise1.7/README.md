@@ -116,3 +116,7 @@ Class/Model => Create objects => Add object to database => Commit the entry
     search for bits of strings or patterns in the row
 
 #### Updating Entries in Your Table
+
+1. Retrieve objects from table
+2. Edit the necessary attribute(s) in an object
+3. Commit your changes
