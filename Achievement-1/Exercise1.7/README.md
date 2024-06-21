@@ -44,16 +44,16 @@ an open-source Python SQL toolkit to implement ORM. SQLAlchemy comes with many t
 
 #### Creating a Table from a Mapped Class
 
-> To map the classes to table on database through SQLAlchemy, declaring a regular class is not enough.
-> Additional properties coming from a special class in SQLAlchemy known as a declarative base, needs to be inherited.
-> `from sqlalchemy.ext.declarative import declarative_base`
-> Generate the class from function:
-> `Base = declarative_base()`
+- To map the classes to table on database through SQLAlchemy, declaring a regular class is not enough.
+- Additional properties coming from a special class in SQLAlchemy known as a declarative base, needs to be inherited.
+- `from sqlalchemy.ext.declarative import declarative_base`
+- Generate the class from function:
+  `Base = declarative_base()`
 
 #### To create a representation of this table as a class:
 
 - import a couple of types that SQLAlchemy offers
-  `from sqlalchemy import column`
+  `from sqlalchemy import Column`
   `from sqlalchemy.types import Integer, String`
 - Declare a new class, inheriting properties from Base
 - Declaring table name is optional, if it's not declared, table name will be class name
@@ -67,6 +67,9 @@ class Recipe(Base):
     ingredients = Column(String(255))
     cooking_time = Column(Integer)
     difficulty = Column(String(20))
+
+    def __repr__(self):
+        return "<Recipe ID: " + str(self.id) + "-" + self.name + ">"
 ```
 
 - Recipe is a data model that stores the representation of the table’s structure in the database.
@@ -97,3 +100,19 @@ Add entries to table as objects from the class.
 Class/Model => Create objects => Add object to database => Commit the entry
 `session.add(object name)`
 `session.commit()`
+
+#### Reading Entries from a Table
+
+`query(<class/model name>)`
+`session.query(Recipe).all()` => Retrieves everything from the table as a list of objects
+
+- Retrieving a Single Object Using the get() Method
+  `session.query(class).get(primary_key)`
+- Retrieving One or More Objects Using the filter() Method
+  If not sure of the primary_key you are looking for
+  `session.query(<model name>).filter(<model name>.<attribute/column name> == <value to compare against>).one()`
+
+  - Using the like() Method
+    search for bits of strings or patterns in the row
+
+#### Updating Entries in Your Table
