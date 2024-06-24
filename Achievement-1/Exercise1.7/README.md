@@ -32,7 +32,7 @@ an open-source Python SQL toolkit to implement ORM. SQLAlchemy comes with many t
 5. Service Status: Running
 6. If service status is not running => Click Start button
 
-### Connecting SQLAlchemy with Your Database
+## Connecting SQLAlchemy with Your Database
 
 1. Open an iPython shell
 2. Import create_engine function from sqlalchemy
@@ -120,3 +120,23 @@ Class/Model => Create objects => Add object to database => Commit the entry
 1. Retrieve objects from table
 2. Edit the necessary attribute(s) in an object
 3. Commit your changes
+
+#### Making Direct Changes Using the update() Method for multiple rows
+
+```bash
+session.query(<model name>).filter(<column 1 name> == 'value for column 1').update({<model name>.<column 1 name> : <new value for column 1>})
+session.commit()
+```
+
+#### Deleting Entries from Your Table
+
+```bash
+table_to_be_deleted = session.query(<model name>).filter(<column 1 name == <value for column 1>).one()
+session.delete(table_to_be_deleted)
+session.commit()
+```
+
+#### Bringing out both the 'column 1' and 'column 2' from our table
+
+- with_entities
+  `session.query(<model name>).with_entities(column 1, column 2).all()`
