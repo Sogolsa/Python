@@ -302,4 +302,5 @@ def delete_recipe(conn, cursor):
 
 
 main_menu(conn, cursor)
+cursor.close()
 conn.close()
