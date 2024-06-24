@@ -1,17 +1,23 @@
 # Connect to MySQL server
 import mysql.connector  # type: ignore
 
-# Initializing a connection object
-conn = mysql.connector.connect(host="localhost", user="cf-python", passwd="password")
+try:
+    # Initializing a connection object
+    conn = mysql.connector.connect(
+        host="localhost", user="cf-python", passwd="password"
+    )
 
-# Initializing a cursor object
-cursor = conn.cursor()
+    # Initializing a cursor object
+    cursor = conn.cursor()
 
-# Create a Database
-cursor.execute("CREATE DATABASE IF NOT EXISTS task_database")
+    # Create a Database
+    cursor.execute("CREATE DATABASE IF NOT EXISTS task_database")
 
-# Access the database
-cursor.execute("USE task_database")
+    # Access the database
+    cursor.execute("USE task_database")
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
+    exit(1)
 
 # Create a table named Recipes
 cursor.execute(
