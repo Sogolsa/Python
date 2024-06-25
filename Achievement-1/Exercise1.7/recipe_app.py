@@ -129,12 +129,12 @@ def view_all_recipes():
     # Retrieve all recipes
     recipes = session.query(Recipe).all()
 
-    # Check if there are no recipes
+    """Check if there are no recipes"""
     if not Recipe:
         print("There are no recipes in the database.")
         return None
 
-    # Loop through recipes and display them
+    """Loop through recipes and display them"""
     for recipe in recipes:
         print(recipe)
 
@@ -142,7 +142,7 @@ def view_all_recipes():
 def search_by_ingredient():
     """Search for recipes based on ingredients provided by the user."""
 
-    # Check if there are any entries in database
+    """Check if there are any entries in database"""
     num_entries = session.query(Recipe).count()
     if num_entries == 0:
         print("There no entries in the database.")
@@ -154,7 +154,7 @@ def search_by_ingredient():
     # Initialize empty set of ingredients
     all_ingredients = set()
 
-    # Collect all unique ingredients from the database
+    """Collect all unique ingredients from the database"""
     for result in results:
         ingredients_list = result[0].split(", ")
         for ingredient in ingredients_list:
@@ -166,8 +166,8 @@ def search_by_ingredient():
     for position, ingredient in enumerate(all_ingredients):
         print(f"Ingredient {position}: {ingredient}")
 
-    # Ask user for ingredients to search by
     while True:
+        """Ask user for ingredients to search by"""
         try:
             user_choice = input(
                 "Enter number corresponding the ingredient to search for, separated by spaces: "
@@ -203,22 +203,22 @@ def search_by_ingredient():
 def edit_recipe():
     """Edit an existing recipe in the database."""
 
-    # Check if there are any recipes in the database
+    """Check if there are any recipes in the database"""
     num_recipes = session.query(Recipe).count()
     if num_recipes == 0:
         print("There are no entries in the database.")
         return None
 
-    # Retrieve the id and name of each recipe
+    """Retrieve the id and name of each recipe"""
     results = session.query(Recipe.id, Recipe.name).all()
 
-    # Display the available recipes to the user
+    """Display the available recipes to the user"""
     print("\nAvailable Recipes:\n" + "-" * 20)
     for recipe in results:
         print(f"\nID: {recipe.id} - Name: {recipe.name}\n")
 
-    # Ask the user to pick a recipe by its id
     while True:
+        """Ask the user to pick a recipe by its id"""
         try:
             selected_id = int(
                 input("Enter the ID of the recipe you would like to edit: ")
@@ -232,7 +232,7 @@ def edit_recipe():
         except:
             print("An unexpected error has occurred.")
 
-    # Retrieve the recipe corresponding with id
+    """ Retrieve the recipe corresponding with id"""
     recipe_to_edit = session.query(Recipe).filter(Recipe.id == selected_id).one()
 
     if recipe_to_edit is None:
@@ -247,8 +247,8 @@ def edit_recipe():
         f"3. Cooking Time: {recipe_to_edit.cooking_time} minutes\n"
     )
 
-    # Ask user which attribute to edit
     while True:
+        """Ask user which attribute to edit"""
         try:
             selected_attribute = int(
                 input(
@@ -302,7 +302,7 @@ def edit_recipe():
 def delete_recipe():
     """Deleting an existing recipe."""
     try:
-        # Check if any recipe exists
+        """Check if any recipe exists"""
         num_recipes = session.query(Recipe).count()
         if num_recipes == 0:
             print("No recipe available in database.")
