@@ -213,7 +213,7 @@ def edit_recipe():
     results = session.query(Recipe.id, Recipe.name).all()
 
     # Display the available recipes to the user
-    print("Available Recipes:\n" + "-" * 20)
+    print("\nAvailable Recipes:\n" + "-" * 20)
     for recipe in results:
         print(f"\nID: {recipe.id} - Name: {recipe.name}\n")
 
@@ -242,7 +242,7 @@ def edit_recipe():
     # Display recipe
     print(
         f"\nRecipe to be edited:\n"
-        f"1. Name: {recipe_to_edit.name}\n"
+        f"\n1. Name: {recipe_to_edit.name}\n"
         f"2. Ingredients: {recipe_to_edit.ingredients}\n"
         f"3. Cooking Time: {recipe_to_edit.cooking_time} minutes\n"
     )
@@ -296,7 +296,7 @@ def edit_recipe():
 
     # Commit these changes to the database
     session.commit()
-    print("Recipe updated successfully.")
+    print("\nRecipe updated successfully.")
 
 
 def delete_recipe():
