@@ -359,7 +359,7 @@ def delete_recipe():
 def main_menu():
     choice = ""
     while choice != "quit":
-        print("Main Menu\n" + "-" * 20)
+        print("\nMain Menu\n" + "-" * 20)
         print("What would you like to do? Pick a choice!")
         print("1. Create a new recipe")
         print("2. View all recipes")
