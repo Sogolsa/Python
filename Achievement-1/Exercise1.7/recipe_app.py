@@ -197,6 +197,7 @@ def search_by_ingredient():
             print("Recipes found containing the selected ingredients: ")
             for recipe in recipes:
                 print(recipe)
+            break
 
 
 def edit_recipe():
