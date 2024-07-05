@@ -17,7 +17,7 @@
 Step 1:
 
 - Create a new virtual environment: `mkvirtualenv a2-ve-recipeapp`
-- Activate virtual environment: `Envs\web-dev\Scripts\activate.bat` for windows
+- Activate virtual environment: `Envs\a2-ve-recipeapp\Scripts\activate.bat` for windows
 
 Step 2:
 
